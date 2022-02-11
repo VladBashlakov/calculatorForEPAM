@@ -1,8 +1,6 @@
 package by.epam.hm.logic;
 
 
-import java.util.Arrays;
-
 public class CalcLogic {
 
     public boolean checkIfSumFirstTwoDigitsEqualSumLastTwoDigits(int number) {

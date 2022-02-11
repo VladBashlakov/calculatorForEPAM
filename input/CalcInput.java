@@ -3,7 +3,8 @@ package by.epam.hm.input;
 import java.util.Scanner;
 
 public class CalcInput {
-    Scanner scanner = new Scanner(System.in);
+
+    public Scanner scanner = new Scanner(System.in);
 
     public int inputNumber() {
         System.out.println("Введите четырехзначное число");

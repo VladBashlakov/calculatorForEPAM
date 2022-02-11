@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class CalcView {
+
     public void menu() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите номер действия которое хотите выполнить:\n" +
