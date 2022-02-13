@@ -9,7 +9,10 @@ import java.util.Scanner;
 public class CalcView {
 
     public void menu() {
+
+        @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
+
         System.out.println("Введите номер действия которое хотите выполнить:\n" +
 
                 "\n1:Проверить, является ли сумма двух первых цифр заданного четырехзначного числа\n" +
