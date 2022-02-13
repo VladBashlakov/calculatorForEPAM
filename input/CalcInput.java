@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class CalcInput {
 
+    @SuppressWarnings("resource")
     public Scanner scanner = new Scanner(System.in);
 
     public int inputNumber() {
