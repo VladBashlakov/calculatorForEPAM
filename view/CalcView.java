@@ -2,7 +2,6 @@ package by.epam.hm.view;
 
 import by.epam.hm.controller.CalcController;
 import by.epam.hm.input.CalcInput;
-
 import java.util.Arrays;
 
 
