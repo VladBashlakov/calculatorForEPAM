@@ -2,37 +2,62 @@ package by.epam.hm.input;
 
 import java.util.Scanner;
 
+
 public class CalcInput {
 
     @SuppressWarnings("resource")
-    public Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
 
     public int inputNumber() {
-        System.out.println("Введите четырехзначное число");
-        return scanner.nextInt();
+        return inputReviseInt("Введите четырехзначное число >> ");
     }
 
     public int inputSimpleNumber() {
-        System.out.println("Введите число");
-        return scanner.nextInt();
+        return inputReviseInt("Введите число >> ");
+    }
+
+    public int inputNumberOfMenu() {
+        return inputReviseInt(">>");
     }
 
     public double[] inputThreeNumbers() {
-        System.out.println("Введите 3 числа");
-        return new double[]{scanner.nextDouble(), scanner.nextDouble(), scanner.nextDouble()};
+        return new double[]{
+                inputReviseDouble("Введите действительное число >> "),
+                inputReviseDouble("Введите действительное число >> "),
+                inputReviseDouble("Введите действительное число >> ")
+        };
     }
 
     public int[] inputArrOfNumbers() {
-        System.out.println("Введите размер массива");
-        int[] numbers = new int[scanner.nextInt()];
+        int size;
+        size = inputReviseInt("Введите размер массива >> ") - 1;
 
-        System.out.println("Добавьте числа в массив");
+        int[] numbers = new int[size];
+
+        System.out.println("Добавьте числа в массив >> ");
         for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = scanner.nextInt();
+            numbers[i] = inputReviseInt("Введите число >> ");
         }
         return numbers;
     }
 
+    public int inputReviseInt(String msg) {
+        System.out.print(msg);
+        while (!scanner.hasNextInt()) {
+            scanner.next();
+            System.out.print(msg);
+        }
+        return scanner.nextInt();
+    }
+
+    public double inputReviseDouble(String msg) {
+        System.out.print(msg);
+        while (!scanner.hasNextDouble()) {
+            scanner.next();
+            System.out.print(msg);
+        }
+        return scanner.nextDouble();
+    }
 
 
 }

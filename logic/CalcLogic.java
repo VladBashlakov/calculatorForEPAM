@@ -54,4 +54,5 @@ public class CalcLogic {
         return newArr;
     }
 
+
 }

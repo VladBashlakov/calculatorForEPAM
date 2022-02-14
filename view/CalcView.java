@@ -1,19 +1,17 @@
 package by.epam.hm.view;
 
-
 import by.epam.hm.controller.CalcController;
+import by.epam.hm.input.CalcInput;
 
 import java.util.Arrays;
-import java.util.Scanner;
+
 
 public class CalcView {
 
+    private final CalcInput calcInput = new CalcInput();
+
     public void menu() {
-
-        @SuppressWarnings("resource")
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Введите номер действия которое хотите выполнить:\n" +
+        System.out.println("\nВведите номер действия которое хотите выполнить:\n" +
 
                 "\n1:Проверить, является ли сумма двух первых цифр заданного четырехзначного числа\n" +
                 "равной сумме двух его последних цифр.\n" +
@@ -26,7 +24,7 @@ public class CalcView {
                 "4:Задать два одномерных массива с различным количеством элементов и натуральное число k. " +
                 "Объединить их в один массив, включив второй массив между k-м и (k+1) - м элементами первого.");
 
-        int number = scanner.nextInt();
+        int number = calcInput.inputNumberOfMenu();
         if (number == 1) {
             CalcController.checkIfSumFirstTwoDigitsEqualSumLastTwoDigits();
         } else if (number == 2) {
@@ -36,8 +34,8 @@ public class CalcView {
         } else if (number == 4) {
             CalcController.mergeArrays();
         }
+        menu();
     }
-
 
     public void showBooleanResult(boolean bool) {
         System.out.println("Вывожу результат сравнения чисел");
@@ -55,6 +53,7 @@ public class CalcView {
     }
 
     public void showSimpleNumber(int number) {
+        System.out.println("Вывожу сумму чисел кратных числу");
         System.out.println(number);
     }
 
